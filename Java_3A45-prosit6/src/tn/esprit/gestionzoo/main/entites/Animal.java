@@ -1,16 +1,17 @@
-package tn.esprit.gestionzoo.entities;
+package tn.esprit.gestionzoo.main.entites;
 public class Animal {
 
-    String family, name;
-    int age;
-    boolean isMammal;
+   private String Family;
+   private String name;
+   private int age ;
+   private boolean isMammal;
 
     public String getFamily() {
-        return family;
+        return Family;
     }
 
     public void setFamily(String family) {
-        this.family = family;
+        Family = family;
     }
 
     public String getName() {
@@ -26,11 +27,13 @@ public class Animal {
     }
 
     public void setAge(int age) {
-        if(age>0){
+        if (age>0){
             this.age = age;
+
         }
-        else{
-            System.out.println("the age of the animal must be positive");
+        else {
+
+            throw new IllegalArgumentException("age must be positve");
         }
 
     }
@@ -43,21 +46,23 @@ public class Animal {
         isMammal = mammal;
     }
 
-    public Animal() {
+    public Animal(){
 
     }
 
-    public Animal(String family, String name, int age, boolean isMammal) {
-        this.family = family;
-        this.name = name;
+    public Animal(String Family, String name ,int age ,Boolean isMammal)
+    { this.Family=Family;
+        this.name=name;
         setAge(age);
-        this.isMammal = isMammal;
-    }
+        this.isMammal=isMammal;
+
+
+            }
 
     @Override
     public String toString() {
         return "Animal{" +
-                "family='" + family + '\'' +
+                "Family='" + Family + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", isMammal=" + isMammal +
